@@ -1,7 +1,7 @@
 /**
 * Simple Load More
 *
-* Version: 0.1
+* Version: 0.2
 * Author: Zeshan Ahmed
 * Website: https://zeshanahmed.com/
 * Github: https://github.com/zeshanshani/simple-load-more/
@@ -18,7 +18,7 @@
     // Variables
     var $loadMore = $(this);
     var $items = $loadMore.find(settings.item);
-    var btnHTML = settings.btnHTML ? settings.btnHTML : '<div class="text-center"><a href="#" class="load-more__btn cta-secondary">View More <i class="fas fa-angle-down"></i></a></div>';
+    var btnHTML = settings.btnHTML ? settings.btnHTML : '<a href="#" class="load-more__btn">View More <i class="fas fa-angle-down"></i></a>';
     var $btnHTML = $(btnHTML);
 
     // Add classes.
@@ -31,6 +31,10 @@
     }
 
     $btn = $loadMore.find( '.load-more__btn' );
+
+    if ( ! $btn.length ) {
+      $btn = $btnHTML;
+    }
 
     if ( $items.length > settings.count ) {
       $items.slice(settings.count).hide();
