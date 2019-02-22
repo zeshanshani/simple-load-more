@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple Load More - Demo</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+      }
+
+      .wrapper {
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .load-more__btn {
+        padding-top: 10px;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Simple Load More - Demo</h1>
+      <div class="some-list">
+        <div>Some List Item 1</div>
+        <div>Some List Item 2</div>
+        <div>Some List Item 3</div>
+        <div>Some List Item 4</div>
+        <div>Some List Item 5</div>
+        <div>Some List Item 6</div>
+        <div>Some List Item 7</div>
+        <div>Some List Item 8</div>
+        <div>Some List Item 9</div>
+        <div>Some List Item 10</div>
+        <div>Some List Item 11</div>
+        <div>Some List Item 12</div>
+        <div>Some List Item 13</div>
+        <div>Some List Item 14</div>
+        <div>Some List Item 15</div>
+        <div>Some List Item 16</div>
+        <div>Some List Item 17</div>
+        <div>Some List Item 18</div>
+        <div>Some List Item 19</div>
+        <div>Some List Item 20</div>
+        <div>Some List Item 21</div>
+        <div>Some List Item 22</div>
+        <div>Some List Item 23</div>
+        <div>Some List Item 24</div>
+        <div>Some List Item 25</div>
+        <div>Some List Item 26</div>
+        <div>Some List Item 27</div>
+      </div>
+    </div>
+  </body>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+  <script src="https://raw.githubusercontent.com/zeshanshani/menuScrollSpy/master/jquery.simpleLoadMore.js"></script>
+  <!-- <script src="jquery.simpleLoadMore.js"></script> -->
+  <script>
+    $('.some-list').zaLoadMore({
+      item: 'div',
+      count: 7
+    });
+  </script>
+</html>
