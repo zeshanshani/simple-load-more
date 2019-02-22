@@ -13,7 +13,7 @@ This jQuery function will add a functionality to load 5 (or custom) more items. 
 
 ## Usage
 
-```
+``` JS
 $('.some-element').zaLoadMore({
   item: '.element-item',
   count: 5,
