@@ -1,11 +1,11 @@
 /**
-* Simple Load More
-*
-* Version: 0.2
-* Author: Zeshan Ahmed
-* Website: https://zeshanahmed.com/
-* Github: https://github.com/zeshanshani/simple-load-more/
-*/
+ * Simple Load More
+ *
+ * Version: 0.2
+ * Author: Zeshan Ahmed
+ * Website: https://zeshanahmed.com/
+ * Github: https://github.com/zeshanshani/simple-load-more/
+ */
 (function($) {
   $.fn.zaLoadMore = function( options ) {
     // Settings.
