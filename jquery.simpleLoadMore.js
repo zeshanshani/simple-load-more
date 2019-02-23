@@ -1,7 +1,7 @@
 /**
  * Simple Load More
  *
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Zeshan Ahmed
  * Website: https://zeshanahmed.com/
  * Github: https://github.com/zeshanshani/simple-load-more/
