@@ -7,7 +7,7 @@
  * Github: https://github.com/zeshanshani/simple-load-more/
  */
 (function($) {
-  $.fn.zaLoadMore = function( options ) {
+  $.fn.simpleLoadMore = function( options ) {
     // Settings.
     var settings = $.extend({
       count: 5,
