@@ -1,0 +1,24 @@
+{
+  "name": "simple-load-more",
+  "version": "1.0.0",
+  "description": "Add load more functionality to the list. Show 5 or custom items on clicking the load more button. Not AJAX based.",
+  "main": "jquery.simpleLoadMore.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://zeshanshani@github.com/zeshanshani/simple-load-more.git"
+  },
+  "keywords": [
+    "jquery",
+    "jquery-load-more",
+    "load-more"
+  ],
+  "author": "Zeshan Ahmed",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zeshanshani/simple-load-more/issues"
+  },
+  "homepage": "https://github.com/zeshanshani/simple-load-more#readme"
+}
