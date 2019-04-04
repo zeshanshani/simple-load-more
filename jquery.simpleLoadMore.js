@@ -1,7 +1,7 @@
 /**
  * Simple Load More
  *
- * Version: 1.0.2
+ * Version: 1.0.3
  * Author: Zeshan Ahmed
  * Website: https://zeshanahmed.com/
  * Github: https://github.com/zeshanshani/simple-load-more/
@@ -36,7 +36,7 @@
         $thisLoadMore.append( $btnHTML );
       }
 
-      $btn = $thisLoadMore.find( '.load-more__btn' );
+      var $btn = $thisLoadMore.find( '.load-more__btn' );
 
       // Check if button is not present. If not, then attach $btnHTML to the $btn variable.
       if ( ! $btn.length ) {
