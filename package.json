@@ -1,10 +1,11 @@
 {
   "name": "simple-load-more",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Add load more functionality to the list. Show 5 or custom items on clicking the load more button. Not AJAX based.",
   "main": "jquery.simpleLoadMore.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "uglify": "uglifyjs -c -m -- jquery.simpleLoadMore.js"
   },
   "repository": {
     "type": "git",

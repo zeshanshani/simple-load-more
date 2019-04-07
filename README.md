@@ -8,7 +8,8 @@ This jQuery plugin will add a functionality to load 5 (or custom) more items. Be
 ## Options
 
 * `item`: Set the class of the actual items this plugin should take in count.
-* `count`: Set the number of items to show at first and load after the button is clicked
+* `count`: Set the number of items to show at first and load after the button is clicked (if `itemsToLoad` is not set)
+* `itemsToLoad`: set the number of items to load. Set to -1 to load all at once.
 * `btnHTML`: Set a custom button here.
 
 ## Usage

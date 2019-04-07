@@ -1,7 +1,7 @@
 /**
  * Simple Load More
  *
- * Version: 1.0.3
+ * Version: 1.1.0
  * Author: Zeshan Ahmed
  * Website: https://zeshanahmed.com/
  * Github: https://github.com/zeshanshani/simple-load-more/
@@ -11,6 +11,7 @@
     // Settings.
     var settings = $.extend({
       count: 5,
+      itemsToLoad: 5,
       btnHTML: '',
       item: ''
     }, options);
@@ -26,6 +27,12 @@
       var $items        = $thisLoadMore.find(settings.item);
       var btnHTML       = settings.btnHTML ? settings.btnHTML : '<a href="#" class="load-more__btn">View More <i class="fas fa-angle-down"></i></a>';
       var $btnHTML      = $(btnHTML);
+      var itemsToLoad   = settings.itemsToLoad;
+
+      // If options.itemsToLoad is not defined, then assign settings.count to it
+      if ( ! options.itemsToLoad || isNaN( options.itemsToLoad ) ) {
+        settings.itemsToLoad = settings.count;
+      }
 
       // Add classes
       $thisLoadMore.addClass('load-more');
@@ -51,8 +58,12 @@
       $btn.on('click', function(e) {
         e.preventDefault();
 
-        var $this = $(this),
-        $updatedItems = $items.filter(':hidden').slice(0, settings.count);
+        var $this = $(this);
+        var $updatedItems = $items.filter(':hidden');
+
+        if ( settings.itemsToLoad === -1 ) {
+          $updatedItems = $updatedItems.slice(0, settings.itemsToLoad);
+        }
 
         // Show the selected elements.
         if ( $updatedItems.length > 0 ) {
@@ -61,7 +72,8 @@
 
         // Hide the 'View More' button
         // if the elements lenght is less than 5.
-        if ( $updatedItems.length < settings.count ) {
+        // OR if the settings.itemsToLoad is set to -1.
+        if ( $updatedItems.length < settings.count || settings.itemsToLoad === -1 ) {
           $this.remove();
         }
       });
