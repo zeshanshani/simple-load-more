@@ -1,6 +1,6 @@
 {
   "name": "simple-load-more",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Add load more functionality to the list. Show 5 or custom items on clicking the load more button. Not AJAX based.",
   "main": "jquery.simpleLoadMore.js",
   "scripts": {
