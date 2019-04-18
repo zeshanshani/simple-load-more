@@ -1,7 +1,7 @@
 /**
  * Simple Load More
  *
- * Version: 1.1.0
+ * Version: 1.2.0
  * Author: Zeshan Ahmed
  * Website: https://zeshanahmed.com/
  * Github: https://github.com/zeshanshani/simple-load-more/
@@ -59,10 +59,11 @@
         e.preventDefault();
 
         var $this = $(this);
-        var $updatedItems = $items.filter(':hidden');
+        var $hiddenItems = $items.filter(':hidden');
+        var $updatedItems = $hiddenItems;
 
-        if ( settings.itemsToLoad === -1 ) {
-          $updatedItems = $updatedItems.slice(0, settings.itemsToLoad);
+        if ( settings.itemsToLoad !== -1 && settings.itemsToLoad > 0 ) {
+          $updatedItems = $hiddenItems.slice(0, settings.itemsToLoad);
         }
 
         // Show the selected elements.
@@ -73,7 +74,7 @@
         // Hide the 'View More' button
         // if the elements lenght is less than 5.
         // OR if the settings.itemsToLoad is set to -1.
-        if ( $updatedItems.length <= settings.count || settings.itemsToLoad === -1 ) {
+        if ( $hiddenItems.length <= settings.itemsToLoad || settings.itemsToLoad === -1 ) {
           $this.remove();
         }
       });
