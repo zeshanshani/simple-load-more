@@ -18,6 +18,7 @@ This jQuery plugin will add a functionality to load 5 (or custom) more items. Be
 $('.some-element').simpleLoadMore({
   item: '.element-item',
   count: 5,
+  // itemsToLoad: 10,
   // btnHTML: '<a href="#" class="load-more__btn">View More <i class="fas fa-angle-down"></i></a>'
 });
 ```
