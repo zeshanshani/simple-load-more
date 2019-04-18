@@ -74,7 +74,7 @@
         // Hide the 'View More' button
         // if the elements lenght is less than 5.
         // OR if the settings.itemsToLoad is set to -1.
-        if ( $hiddenItems.length < settings.itemsToLoad || settings.itemsToLoad === -1 ) {
+        if ( $hiddenItems.length <= settings.itemsToLoad || settings.itemsToLoad === -1 ) {
           $this.remove();
         }
       });
