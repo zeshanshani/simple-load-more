@@ -7,10 +7,12 @@ This jQuery plugin will add a functionality to load 5 (or custom) more items. Be
 
 ## Options
 
-* `item`: Set the class of the actual items this plugin should take in count.
-* `count`: Set the number of items to show at first and load after the button is clicked (if `itemsToLoad` is not set)
-* `itemsToLoad`: set the number of items to load. Set to -1 to load all at once.
-* `btnHTML`: Set a custom button here.
+| Option | Type | Default | Description |
+| ------ | ---- | ------- | ----------- |
+| item | string (jQuery Selector) | null | Set the class of the actual items this plugin should take in count. |
+| count | integer | 5 | Set the number of items to show at first and load after the button is clicked (if `itemsToLoad` is not set) |
+| itemsToLoad | integer | value of `count` | set the number of items to load. Set to -1 to load all at once. |
+| btnHTML | string (html) | `<a href="#" class="load-more__btn">View More <i class="fas fa-angle-down"></i></a>` | Set a custom button here. |
 
 ## Usage
 
