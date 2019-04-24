@@ -1,0 +1,20 @@
+node_modules
+npm-debug.log
+.sass-cache
+.gulp-file
+bower_components
+*.scssc
+sftp-config.json
+sftp.json
+config.codekit
+*.map
+assets/images/temp
+ftp-kr.*
+.vagrant
+.idea
+
+# OS generated files #
+**.DS_Store*
+ehthumbs.db
+Thumbs.db
+._*
