@@ -3,7 +3,7 @@ This jQuery plugin will add a functionality to load 5 (or custom) more items. Be
 
 *Note: this is not AJAX based. It just hides all the items except the first 5 (or custom) and shows another 5 when button is clicked.*
 
-<a href="https://zeshanshani.github.io/simple-load-more/demo.html" target="_blank">View Demo</a>
+<a href="https://zeshanshani.github.io/simple-load-more/demos/demo.html" target="_blank">View Demo</a>
 
 ## Options
 
