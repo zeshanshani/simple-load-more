@@ -1,7 +1,7 @@
 /**
  * Simple Load More
  *
- * Version: 1.2.5
+ * Version: 1.3.0
  * Author: Zeshan Ahmed
  * Website: https://zeshanahmed.com/
  * Github: https://github.com/zeshanshani/simple-load-more/
@@ -13,7 +13,8 @@
       count: 5,
       itemsToLoad: 5,
       btnHTML: '',
-      item: ''
+      item: '',
+      cssClass: 'load-more'
     }, options);
 
     // Variables
@@ -22,12 +23,23 @@
     // Run through all the elements.
     $loadMore.each(function(i, el) {
 
+      // Define all settings as variables
+      var btnHTML     = settings.btnHTML,
+          count       = settings.count,
+          itemsToLoad = settings.itemsToLoad,
+          item        = settings.item,
+          cssClass    = settings.cssClass;
+
       // Variables.
-      var $thisLoadMore = $(this);
-      var $items        = $thisLoadMore.find(settings.item);
-      var btnHTML       = settings.btnHTML ? settings.btnHTML : '<a href="#" class="load-more__btn">View More <i class="fas fa-angle-down"></i></a>';
-      var $btnHTML      = $(btnHTML);
-      var itemsToLoad   = settings.itemsToLoad;
+      var $thisLoadMore = $(this),
+          $items = $thisLoadMore.find(item),
+          $btnHTML;
+
+      // Default if not available
+      if ( ! btnHTML ) btnHTML = '<a href="#" class="' + cssClass + '__btn">View More <i class="fas fa-angle-down"></i></a>';
+
+      // Set $btnHTML as $btnHTML
+      $btnHTML = $(btnHTML);
 
       // If options.itemsToLoad is not defined, then assign settings.count to it
       if ( ! options.itemsToLoad || isNaN( options.itemsToLoad ) ) {
@@ -35,15 +47,15 @@
       }
 
       // Add classes
-      $thisLoadMore.addClass('load-more');
-      $items.addClass('load-more__item');
+      $thisLoadMore.addClass(cssClass);
+      $items.addClass(cssClass + '__item');
 
       // Add button.
-      if ( ! $thisLoadMore.find( '.load-more__btn' ).length && $items.length > settings.count ) {
+      if ( ! $thisLoadMore.find( '.' + cssClass + '__btn' ).length && $items.length > settings.count ) {
         $thisLoadMore.append( $btnHTML );
       }
 
-      var $btn = $thisLoadMore.find( '.load-more__btn' );
+      var $btn = $thisLoadMore.find( '.' + cssClass + '__btn' );
 
       // Check if button is not present. If not, then attach $btnHTML to the $btn variable.
       if ( ! $btn.length ) {

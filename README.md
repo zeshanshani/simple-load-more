@@ -44,3 +44,4 @@ $('.some-element').simpleLoadMore({
 | count | integer | 5 | Set the number of items to show at first and load after the button is clicked (if `itemsToLoad` is not set) |
 | itemsToLoad | integer | value of `count` | set the number of items to load. Set to -1 to load all at once. |
 | btnHTML | string (html) | `<a href="#" class="load-more__btn">View More <i class="fas fa-angle-down"></i></a>` | Set a custom button here. |
+| cssClass | string | `load-more` | Set the custom CSS class for the instance. Do not include dot in the class name, e.g., `new-class`  |
