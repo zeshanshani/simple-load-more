@@ -114,6 +114,81 @@
           </div>
         </div>
       </div>
+      <h2>Show counter in the button</h2>
+      <div class="row">
+        <div class="left">
+          <h3>With counter inside button</h3>
+          <p>This example shows the counter in the view more button.</p>
+          <div class="some-list-counter-1">
+            <div>Some List Item 1</div>
+            <div>Some List Item 2</div>
+            <div>Some List Item 3</div>
+            <div>Some List Item 4</div>
+            <div>Some List Item 5</div>
+            <div>Some List Item 6</div>
+            <div>Some List Item 7</div>
+            <div>Some List Item 8</div>
+            <div>Some List Item 9</div>
+            <div>Some List Item 10</div>
+            <div>Some List Item 11</div>
+            <div>Some List Item 12</div>
+            <div>Some List Item 13</div>
+            <div>Some List Item 14</div>
+            <div>Some List Item 15</div>
+            <div>Some List Item 16</div>
+            <div>Some List Item 17</div>
+            <div>Some List Item 18</div>
+            <div>Some List Item 19</div>
+            <div>Some List Item 20</div>
+            <div>Some List Item 21</div>
+            <div>Some List Item 22</div>
+            <div>Some List Item 23</div>
+            <div>Some List Item 24</div>
+            <div>Some List Item 25</div>
+            <div>Some List Item 26</div>
+            <div>Some List Item 27</div>
+            <div>Some List Item 28</div>
+            <div>Some List Item 29</div>
+            <div>Some List Item 30</div>
+          </div>
+        </div>
+        <div class="right">
+          <h3>With counter outside button</h3>
+          <p>This example shows the counter in a separate text tag.</p>
+          <div class="some-list-counter-2">
+            <div>Some List Item 1</div>
+            <div>Some List Item 2</div>
+            <div>Some List Item 3</div>
+            <div>Some List Item 4</div>
+            <div>Some List Item 5</div>
+            <div>Some List Item 6</div>
+            <div>Some List Item 7</div>
+            <div>Some List Item 8</div>
+            <div>Some List Item 9</div>
+            <div>Some List Item 10</div>
+            <div>Some List Item 11</div>
+            <div>Some List Item 12</div>
+            <div>Some List Item 13</div>
+            <div>Some List Item 14</div>
+            <div>Some List Item 15</div>
+            <div>Some List Item 16</div>
+            <div>Some List Item 17</div>
+            <div>Some List Item 18</div>
+            <div>Some List Item 19</div>
+            <div>Some List Item 20</div>
+            <div>Some List Item 21</div>
+            <div>Some List Item 22</div>
+            <div>Some List Item 23</div>
+            <div>Some List Item 24</div>
+            <div>Some List Item 25</div>
+            <div>Some List Item 26</div>
+            <div>Some List Item 27</div>
+            <div>Some List Item 28</div>
+            <div>Some List Item 29</div>
+            <div>Some List Item 30</div>
+          </div>
+        </div>
+      </div>
       <br>
       <h2>Load different number of items</h2>
       <div class="row">
@@ -164,6 +239,17 @@
     $('.some-list-2').simpleLoadMore({
       item: 'div',
       count: 5
+    });
+    $('.some-list-counter-1').simpleLoadMore({
+      item: 'div',
+      count: 5,
+      counterInBtn: true,
+      btnText: 'View More {showing}/{total}',
+    });
+    $('.some-list-counter-2').simpleLoadMore({
+      item: 'div',
+      count: 5,
+      showCounter: true
     });
     $('.some-list-3').simpleLoadMore({
       item: 'div',
