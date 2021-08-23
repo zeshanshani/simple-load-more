@@ -20,6 +20,8 @@
       btnText: 'View More',
       btnWrapper: '',
       btnWrapperClass: '',
+      easing: 'fade',
+      easingDuration: 400
     }, options);
 
     // Variables
@@ -39,6 +41,9 @@
           btnText         = settings.btnText,
           btnWrapper      = settings.btnWrapper,
           btnWrapperClass = settings.btnWrapperClass;
+          // easing          = settings.easing,
+          // easingDuration  = settings.easingDuration;
+
 
       // Default settings if empty
       if ( ! btnWrapper && btnWrapper !== false ) {
@@ -112,7 +117,11 @@
 
         // Show the selected elements.
         if ( $updatedItems.length > 0 ) {
-          $updatedItems.fadeIn();
+          if ( settings.easing === 'fade' ) {
+            $updatedItems.fadeIn( settings.easingDuration );
+          } else {
+            $updatedItems.slideDown( settings.easingDuration );
+          }
         }
 
         // Update the showing items count.
