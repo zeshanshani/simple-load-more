@@ -50,3 +50,10 @@ $('.some-element').simpleLoadMore({
 | counterText | string | `Showing {showing} out of {total}` | Set custom counter text here. Use placeholders `{showing}` and `{total}` in the text. Where `{showing}` shows the current number of items displaying and `{total}` shows the total items one instance has. |
 | btnWrapper | string (html) \\| boolean | `<div class="load-more__btn-wrap"></div>` | Wrap custom HTML tag around the 'Load More' button. Or set this to `false` to completely remove the wrapper |
 | btnWrapperClass | string | null | Add a custom CSS class to the button wrapper. |
+
+## Changelog
+
+#### 1.5.0
+
+- Feature: ability to set a custom button wrapper and wrapper class
+- Feature: ability to change easing to 'slide'. Default is 'fade'
