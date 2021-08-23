@@ -48,3 +48,5 @@ $('.some-element').simpleLoadMore({
 | cssClass | string | `load-more` | Set the custom CSS class for the instance. Do not include dot in the class name, e.g., `new-class`  |
 | showCounter | boolean | false | Shows the counter in a separate tag. By default enabling this option will show a text `Showing X out of X` before the load more button. <a href="https://zeshanshani.github.io/simple-load-more/demos/demo.html" target="_blank">View Demo</a> for the example. |
 | counterText | string | `Showing {showing} out of {total}` | Set custom counter text here. Use placeholders `{showing}` and `{total}` in the text. Where `{showing}` shows the current number of items displaying and `{total}` shows the total items one instance has. |
+| btnWrapper | string (html) \\| boolean | `<div class="load-more__btn-wrap"></div>` | Wrap custom HTML tag around the 'Load More' button. Or set this to `false` to completely remove the wrapper |
+| btnWrapperClass | string | null | Add a custom CSS class to the button wrapper. |
