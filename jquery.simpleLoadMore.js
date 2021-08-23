@@ -10,14 +10,16 @@
   $.fn.simpleLoadMore = function( options ) {
     // Settings.
     var settings = $.extend({
+      item: '',
       count: 5,
       itemsToLoad: 5,
-      btnHTML: '',
-      btnText: 'View More',
-      item: '',
       cssClass: 'load-more',
       showCounter: false,
-      counterText: 'Showing {showing} out of {total}'
+      counterText: 'Showing {showing} out of {total}',
+      btnHTML: '',
+      btnText: 'View More',
+      btnWrapper: '',
+      btnWrapperClass: '',
     }, options);
 
     // Variables
@@ -27,20 +29,27 @@
     $loadMore.each(function(i, el) {
 
       // Define all settings as variables
-      var btnHTML     = settings.btnHTML,
-          btnText     = settings.btnText,
-          count       = settings.count,
-          itemsToLoad = settings.itemsToLoad,
-          item        = settings.item,
-          cssClass    = settings.cssClass,
-          showCounter = settings.showCounter,
-          counterText = settings.counterText;
+      var item            = settings.item,
+          count           = settings.count,
+          itemsToLoad     = settings.itemsToLoad,
+          cssClass        = settings.cssClass,
+          showCounter     = settings.showCounter,
+          counterText     = settings.counterText;
+          btnHTML         = settings.btnHTML,
+          btnText         = settings.btnText,
+          btnWrapper      = settings.btnWrapper,
+          btnWrapperClass = settings.btnWrapperClass;
+
+      // Default settings if empty
+      if ( ! btnWrapper && btnWrapper !== false ) {
+        btnWrapper = '<div class="' + cssClass + '__btn-wrap' + ( btnWrapperClass ? ' ' + btnWrapperClass : '' ) + '"></div>';
+      }
 
       // Variables.
       var $thisLoadMore = $(this),
           $items = $thisLoadMore.find(item),
           $btnHTML,
-          $counterHTML = $('<p class="slm__counter">' + counterText + '</p>');
+          $counterHTML = $('<p class="' + cssClass + '__counter">' + counterText + '</p>');
 
       // If showCounter is true, then append the counter text in the component.
       if ( showCounter ) {
@@ -69,8 +78,8 @@
 
       // Replace counter with fields
       $btnHTML.add( $counterHTML ).html(function(i, oldHtml) {
-        var newHtml = oldHtml.replace('{showing}', '<span class="slm__count slm__count--showing">' + count + '</span>');
-        newHtml = newHtml.replace('{total}', '<span class="slm__count slm__count--total">' + $items.length + '</span>');
+        var newHtml = oldHtml.replace('{showing}', '<span class="' + cssClass + '__count ' + cssClass + '__count--showing">' + count + '</span>');
+        newHtml = newHtml.replace('{total}', '<span class="' + cssClass + '__count ' + cssClass + '__count--total">' + $items.length + '</span>');
 
         return newHtml
       })
@@ -85,6 +94,9 @@
       if ( $items.length > settings.count ) {
         $items.slice(settings.count).hide();
       }
+
+      // Wrap button in its wrapper.
+      $btn.wrapAll( btnWrapper );
 
       // Add click event on button.
       $btn.on('click', function(e) {
@@ -104,7 +116,7 @@
         }
 
         // Update the showing items count.
-        $thisLoadMore.find('.slm__count--showing').text( $items.filter(':visible').length );
+        $thisLoadMore.find('.' + cssClass + '__count--showing').text( $items.filter(':visible').length );
 
         // Hide the 'View More' button
         // if the elements lenght is less than 5.
