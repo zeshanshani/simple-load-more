@@ -281,6 +281,45 @@
         <br>
         <hr>
       </section>
+      <section>
+        <h2>Custom Easing</h2>
+        <div class="row">
+          <div class="left">
+            <h3>Fade in</h3>
+            <div class="easing-1">
+              <div>Some List Item 1</div>
+              <div>Some List Item 2</div>
+              <div>Some List Item 3</div>
+              <div>Some List Item 4</div>
+              <div>Some List Item 5</div>
+              <div>Some List Item 6</div>
+              <div>Some List Item 7</div>
+              <div>Some List Item 8</div>
+              <div>Some List Item 9</div>
+              <div>Some List Item 10</div>
+              <div>Some List Item 11</div>
+              <div>Some List Item 12</div>
+              <div>Some List Item 13</div>
+            </div>
+          </div>
+          <div class="right">
+            <h3>Slide in</h3>
+            <div class="easing-2">
+              <div>Some List Item 1</div>
+              <div>Some List Item 2</div>
+              <div>Some List Item 3</div>
+              <div>Some List Item 4</div>
+              <div>Some List Item 5</div>
+              <div>Some List Item 6</div>
+              <div>Some List Item 7</div>
+              <div>Some List Item 8</div>
+              <div>Some List Item 9</div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <hr>
+      </section>
       <footer>
         <h3>Links:</h3>
         <p>
@@ -292,6 +331,7 @@
     </div>
   </body>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="../jquery.simpleLoadMore.js"></script>
   <!-- <script src="jquery.simpleLoadMore.js"></script> -->
   <script>
@@ -323,6 +363,20 @@
       item: 'div',
       count: 5,
       itemsToLoad: 1
+    });
+
+    // Easing
+    $('.easing-1').simpleLoadMore({
+      item: 'div',
+      count: 5,
+      itemsToLoad: 2,
+      easing: 'fade'
+    });
+    $('.easing-2').simpleLoadMore({
+      item: 'div',
+      count: 5,
+      itemsToLoad: 2,
+      easing: 'slide'
     });
   </script>
 </html>
