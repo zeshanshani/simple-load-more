@@ -1,10 +1,11 @@
 /**
  * Simple Load More
  *
- * Version: 1.5.1
+ * Version: 1.5.2
  * Author: Zeshan Ahmed
  * Website: https://zeshanahmed.com/
  * Github: https://github.com/zeshanshani/simple-load-more/
+ * @license MIT
  */
 (function($) {
   $.fn.simpleLoadMore = function( options ) {
@@ -107,7 +108,7 @@
       $btn.on('click', function(e) {
         e.preventDefault();
 
-        var $this = $(this);
+        var $thisBtn = $(this);
         var $hiddenItems = $items.filter(':hidden');
         var $updatedItems = $hiddenItems;
 
@@ -131,7 +132,11 @@
         // if the elements lenght is less than 5.
         // OR if the settings.itemsToLoad is set to -1.
         if ( $hiddenItems.length <= settings.itemsToLoad || settings.itemsToLoad === -1 ) {
-          $this.remove();
+          if ( $thisBtn.parent( '.' + cssClass + '__btn-wrap' ) ) {
+            $thisBtn.parent().remove();
+          } else {
+            $thisBtn.remove();
+          }
         }
       });
     });

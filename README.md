@@ -55,6 +55,10 @@ $('.some-element').simpleLoadMore({
 
 ## Changelog
 
+#### 1.5.2
+
+- Improvement: remove button wrapper as well when all items have been loaded.
+
 #### 1.5.0
 
 - Feature: ability to set a custom button wrapper and wrapper class
