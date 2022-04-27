@@ -37,7 +37,7 @@
           itemsToLoad     = settings.itemsToLoad,
           cssClass        = settings.cssClass,
           showCounter     = settings.showCounter,
-          counterText     = settings.counterText;
+          counterText     = settings.counterText,
           btnHTML         = settings.btnHTML,
           btnText         = settings.btnText,
           btnWrapper      = settings.btnWrapper,
