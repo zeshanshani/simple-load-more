@@ -7,7 +7,7 @@
  * Github: https://github.com/zeshanshani/simple-load-more/
  * @license MIT
  */
-(function($) {
+ (function($) {
   $.fn.simpleLoadMore = function( options ) {
     // Settings.
     var settings = $.extend({
@@ -84,7 +84,7 @@
 
       // Replace counter with fields
       $btnHTML.add( $counterHTML ).html(function(i, oldHtml) {
-        var newHtml = oldHtml.replace('{showing}', '<span class="' + cssClass + '__count ' + cssClass + '__count--showing">' + count + '</span>');
+        var newHtml = oldHtml.replace('{showing}', '<span class="' + cssClass + '__count ' + cssClass + '__count--showing">' + (count > $items.length ? $items.length : count) + '</span>');
         newHtml = newHtml.replace('{total}', '<span class="' + cssClass + '__count ' + cssClass + '__count--total">' + $items.length + '</span>');
 
         return newHtml
