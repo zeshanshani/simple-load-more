@@ -55,6 +55,11 @@ $('.some-element').simpleLoadMore({
 
 ## Changelog
 
+#### 1.5.3
+
+- Bugfix: typo in variable declaration of using ; instead of ,
+- Bugfix: incorrect counter fix so when count is greater than total items length, then show items length instead.
+
 #### 1.5.2
 
 - Improvement: remove button wrapper as well when all items have been loaded.
