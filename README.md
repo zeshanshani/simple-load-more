@@ -52,9 +52,10 @@ $('.some-element').simpleLoadMore({
 | btnWrapperClass | string | null | Add a custom CSS class to the button wrapper. |
 | easing | string | `fade` | This property determines how the items should load when the button is clicked. You can set it to `fade` or `slide`. |
 | easingDuration | string | `400` | Defines how long it should take to load next items. The value is in milliseconds. |
-| `onLoad` | callback function | `function() {}` | Read more under "Callback" section below. |
-| `onNextLoad` | callback function | `function() {}` | Read more under "Callback" section below. |
-| `onComplete` | callback function | `function() {}` | Read more under "Callback" section below. |
+| `onLoad` | callback function | `function() {}` | Read more under "Events" section below. |
+| `onNextLoad` | callback function | `function() {}` | Read more under "Events" section below. |
+| `onComplete` | callback function | `function() {}` | Read more under "Events" section below. |
+
 
 ## Events
 
@@ -83,6 +84,8 @@ $('.callback-onload').simpleLoadMore({
   },
 });
 ```
+
+Check out the demo for callbacks to see it in action: https://zeshanshani.github.io/simple-load-more/demos/demo.html#callbacks
 
 ## Changelog
 
