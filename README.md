@@ -52,8 +52,46 @@ $('.some-element').simpleLoadMore({
 | btnWrapperClass | string | null | Add a custom CSS class to the button wrapper. |
 | easing | string | `fade` | This property determines how the items should load when the button is clicked. You can set it to `fade` or `slide`. |
 | easingDuration | string | `400` | Defines how long it should take to load next items. The value is in milliseconds. |
+| `onLoad` | callback function | `function() {}` | Read more under "Callback" section below. |
+| `onNextLoad` | callback function | `function() {}` | Read more under "Callback" section below. |
+| `onComplete` | callback function | `function() {}` | Read more under "Callback" section below. |
+
+## Events
+
+With the version 1.6.0, we are introducing callbacks. You can use these callback functions to perform some extra actions during the lifecycle of SLM (SimpleLoadMore) instance.
+
+| Event | Params | Description |
+| ------ | ---- | ----------- |
+| `onLoad` | `$items`, `$btn` | This event fires on first time the SLM instance is fully initialized. Parameter `$items` refer to the all the items in the instance. `$btn` refers to the load more button element. `this` directs to the main SLM element. You can use it to target sub elements. |
+| `onNextLoad` | `$items`, `$btn` | This event fires everytime next batch of items are loaded. Parameter `$items` refer to the all the items in the instance. `$btn` refers to the load more button element. `this` directs to the main SLM element. You can use it to target sub elements. |
+| `onComplete` | `this` | This event fires when all the items have been loaded. `this` directs to the main SLM element. You can use it to target sub elements. |
+
+Using the callback function is very simple. Here's an example:
+
+```JS
+$('.callback-onload').simpleLoadMore({
+  item: 'div',
+  count: 5,
+  onLoad: function($items, $btn) {
+    // Perform actions here.
+  },
+  onNextLoad: function($items, $btn) {
+    // Perform actions here.
+  },
+  onComplete: function() {
+    // Perform actions here.
+  },
+});
+```
 
 ## Changelog
+
+#### 1.6.0
+
+- Feature: Introducing Callbacks 🎉
+- Callback: `onLoad` fires when instance is fully loaded
+- Callback: `onNextLoad` fires every time next batch of items are laoded
+- Callback: `onComplete` fires when all items are loaded
 
 #### 1.5.3
 
