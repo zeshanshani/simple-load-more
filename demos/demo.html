@@ -39,6 +39,10 @@
         float: right;
         width: 47%;
       }
+
+      .callback-response {
+        color: green;
+      }
     </style>
   </head>
   <body>
@@ -320,6 +324,72 @@
         <br>
         <hr>
       </section>
+      <section>
+        <h2>Callbacks</h2>
+        <div class="row">
+          <div class="left">
+            <h3>On Load</h3>
+            <p>This callback is performed only when the instance is fully loaded.</p>
+            <div class="callback-onload">
+              <div>Some List Item 1</div>
+              <div>Some List Item 2</div>
+              <div>Some List Item 3</div>
+              <div>Some List Item 4</div>
+              <div>Some List Item 5</div>
+              <div>Some List Item 6</div>
+              <div>Some List Item 7</div>
+              <div>Some List Item 8</div>
+              <div>Some List Item 9</div>
+              <div>Some List Item 10</div>
+              <div>Some List Item 11</div>
+              <div>Some List Item 12</div>
+              <div>Some List Item 13</div>
+            </div>
+          </div>
+          <div class="right">
+            <h3>On Next Load</h3>
+            <p>This callback is performed every time the next batch of items are laoded. </p>
+            <div class="callback-onnextload">
+              <div>Some List Item 1</div>
+              <div>Some List Item 2</div>
+              <div>Some List Item 3</div>
+              <div>Some List Item 4</div>
+              <div>Some List Item 5</div>
+              <div>Some List Item 6</div>
+              <div>Some List Item 7</div>
+              <div>Some List Item 8</div>
+              <div>Some List Item 9</div>
+              <div>Some List Item 10</div>
+              <div>Some List Item 11</div>
+              <div>Some List Item 12</div>
+              <div>Some List Item 13</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="left">
+            <h3>On Complete</h3>
+            <p>This callback is performed when all the items have been loaded on page and there's nothing left.</p>
+            <div class="callback-oncomplete">
+              <div>Some List Item 1</div>
+              <div>Some List Item 2</div>
+              <div>Some List Item 3</div>
+              <div>Some List Item 4</div>
+              <div>Some List Item 5</div>
+              <div>Some List Item 6</div>
+              <div>Some List Item 7</div>
+              <div>Some List Item 8</div>
+              <div>Some List Item 9</div>
+              <div>Some List Item 10</div>
+              <div>Some List Item 11</div>
+              <div>Some List Item 12</div>
+              <div>Some List Item 13</div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <hr>
+      </section>
       <footer>
         <h3>Links:</h3>
         <p>
@@ -377,6 +447,42 @@
       count: 5,
       itemsToLoad: 2,
       easing: 'slide'
+    });
+
+    // Callbacks
+    $('.callback-onload').simpleLoadMore({
+      item: 'div',
+      count: 5,
+      itemsToLoad: 5,
+      easing: 'fade',
+      onLoad: function($items, $btn) {
+        $(this).after('<p class="callback-response"><i>Callback Response: SimpleLoadMore successfully initialized on this instance!</i></p>')
+      },
+    });
+    $('.callback-onnextload').simpleLoadMore({
+      item: 'div',
+      count: 5,
+      itemsToLoad: 2,
+      easing: 'fade',
+      onNextLoad: function($items, $btn) {
+        if ($(this).next('p').length) {
+          $(this).next('p').find('i').text('Callback Response: More items loaded. Total items remain: ' + $items.filter(':hidden').length);
+        } else {
+          $(this).after('<p class="callback-response"><i>Callback Response: More items loaded. Total items remain: ' + $items.filter(':hidden').length + '</i></p>');
+        }
+      },
+      onComplete: function($items, $btn) {
+        $(this).next('p').html('<p class="callback-response"><i>Callback Response: All items have been loaded!</i></p>');
+      },
+    });
+    $('.callback-oncomplete').simpleLoadMore({
+      item: 'div',
+      count: 5,
+      itemsToLoad: 5,
+      easing: 'fade',
+      onComplete: function() {
+        $(this).after('<p class="callback-response"><i>Callback Response: All items have been loaded!</i></p>');
+      },
     });
   </script>
 </html>
