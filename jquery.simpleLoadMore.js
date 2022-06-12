@@ -22,7 +22,10 @@
       btnWrapper: '',
       btnWrapperClass: '',
       easing: 'fade',
-      easingDuration: 400
+      easingDuration: 400,
+      onLoad: function() {},
+      onNextLoad: function() {},
+      onComplete: function() {}
     }, options);
 
     // Variables
@@ -52,7 +55,8 @@
       }
 
       // Variables.
-      var $thisLoadMore = $(this),
+      var instance = this,
+          $thisLoadMore = $(this),
           $items = $thisLoadMore.find(item),
           $btnHTML,
           $counterHTML = $('<p class="' + cssClass + '__counter">' + counterText + '</p>');
@@ -104,6 +108,11 @@
       // Wrap button in its wrapper.
       $btn.wrapAll( btnWrapper );
 
+      // Perform Callback: onLoad
+      // This callback is performed immediately after the
+      // first initialization is done.
+      settings.onLoad.call(instance, $items, $btn);
+
       // Add click event on button.
       $btn.on('click', function(e) {
         e.preventDefault();
@@ -137,6 +146,16 @@
           } else {
             $thisBtn.remove();
           }
+          // Perform Callback: onComplete
+          settings.onComplete.call(instance);
+        } else {
+          // var itemsRemaining = $items.filter(':hidden').length;
+
+          // Perform Callback: onNextLoad
+          // This callback function will run on every next load.
+          // Helpful if you want to show any message or make some
+          // chnages.
+          settings.onNextLoad.call(instance, $items, $btn);
         }
       });
     });
